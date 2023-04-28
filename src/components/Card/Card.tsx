@@ -14,9 +14,17 @@ export interface ICardProps {
   title: string;
   subTitle: string;
   imgUrl: string;
+  emission: number;
+  rating: number;
 }
 
-export const Card: FC<ICardProps> = ({ title, subTitle, imgUrl }) => {
+export const Card: FC<ICardProps> = ({
+  title,
+  subTitle,
+  imgUrl,
+  emission,
+  rating,
+}) => {
   return (
     <ChakraCard borderRadius={16}>
       <CardBody p={3}>
@@ -32,14 +40,12 @@ export const Card: FC<ICardProps> = ({ title, subTitle, imgUrl }) => {
             <div style={emissionsStyles}>
               <span>Emissions offset:</span>
               <span>
-                <strong>810kg CO2e</strong>
+                {emission} CO<sub>2</sub>e
               </span>
             </div>
           </div>
           <div style={ratingStyles}>
-            <div style={ratingContentStyles}>
-              Trip Rating: <strong>4.7</strong>
-            </div>
+            <div style={ratingContentStyles}>Trip rating: {rating}</div>
           </div>
         </div>
       </CardBody>

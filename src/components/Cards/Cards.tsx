@@ -7,9 +7,16 @@ import { CARDS } from './Cards.data';
 const displayCardsList = (cards: ICardProps[]) => {
   if (cards?.length === 0) return null;
   return cards.map((card, index) => {
-    const { title = '', subTitle = '', imgUrl = '' } = card;
+    const { title = '', subTitle = '', imgUrl = '', emission, rating } = card;
     return (
-      <Card key={index} title={title} subTitle={subTitle} imgUrl={imgUrl} />
+      <Card
+        key={index}
+        title={title}
+        subTitle={subTitle}
+        imgUrl={imgUrl}
+        emission={emission}
+        rating={rating}
+      />
     );
   });
 };

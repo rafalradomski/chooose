@@ -24,6 +24,7 @@ export const titleStyles: CSSProperties = {
   color: '#fff',
   fontSize: 24,
   fontWeight: 'bold',
+  textShadow: '1px 1px 2px #000000',
 };
 
 export const subTitleStyles: CSSProperties = {
@@ -31,6 +32,7 @@ export const subTitleStyles: CSSProperties = {
   padding: '0 32px',
   color: '#fff',
   fontSize: 14,
+  textShadow: '2px 2px 4px #000000',
 };
 
 export const emissionsStyles: CSSProperties = {
@@ -38,7 +40,7 @@ export const emissionsStyles: CSSProperties = {
   width: '100%',
   color: '#fff',
   background: '#1d2430',
-  padding: '20px 14px',
+  padding: '18px 14px',
   borderRadius: '16px',
   justifyContent: 'space-between',
   marginTop: 12,
@@ -48,13 +50,12 @@ export const ratingStyles: CSSProperties = {
   width: '100%',
   position: 'absolute',
   bottom: 0,
-  padding: '0 32px',
+  padding: '0 36px',
+  textAlign: 'left',
 };
 
 export const ratingContentStyles: CSSProperties = {
-  alignSelf: 'flex-end',
   background: '#fff',
   borderRadius: '8px 8px 0 0',
-  padding: '16px 0',
-  margin: 'auto',
+  padding: '16px',
 };
