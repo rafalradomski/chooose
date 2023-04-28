@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Card as ChakraCard, CardBody } from '@chakra-ui/react';
 import {
   rootStyles,
@@ -9,13 +9,14 @@ import {
   ratingStyles,
   ratingContentStyles,
 } from './Card.styles';
+import { Rating } from 'react-simple-star-rating';
 
 export interface ICardProps {
   title: string;
   subTitle: string;
   imgUrl: string;
   emission: number;
-  rating: number;
+  defaultRating: number;
 }
 
 export const Card: FC<ICardProps> = ({
@@ -23,10 +24,23 @@ export const Card: FC<ICardProps> = ({
   subTitle,
   imgUrl,
   emission,
-  rating,
+  defaultRating,
 }) => {
+  const [rating, setRating] = useState(defaultRating);
+
+  // Catch Rating value
+  const handleRating = (rate: number) => {
+    setRating(rate);
+    // other logic
+  };
+  // Optinal callback functions
+  const onPointerEnter = () => console.log('Enter');
+  const onPointerLeave = () => console.log('Leave');
+  const onPointerMove = (value: number, index: number) =>
+    console.log(value, index);
+
   return (
-    <ChakraCard borderRadius={16}>
+    <ChakraCard borderRadius={24}>
       <CardBody p={3}>
         <div
           style={{
@@ -45,7 +59,28 @@ export const Card: FC<ICardProps> = ({
             </div>
           </div>
           <div style={ratingStyles}>
-            <div style={ratingContentStyles}>Trip rating: {rating}</div>
+            <div style={ratingContentStyles}>
+              <strong>Trip rating</strong>
+              <div
+                style={{
+                  direction: 'ltr',
+                  fontFamily: 'sans-serif',
+                  touchAction: 'none',
+                  margin: '0 4px 0 16px',
+                }}
+              >
+                <Rating
+                  emptyStyle={{ display: 'flex' }}
+                  fillStyle={{ display: '-webkit-inline-box' }}
+                  onClick={handleRating}
+                  onPointerEnter={onPointerEnter}
+                  onPointerLeave={onPointerLeave}
+                  onPointerMove={onPointerMove}
+                  size={30}
+                />
+              </div>
+              <strong>{rating}</strong>
+            </div>
           </div>
         </div>
       </CardBody>

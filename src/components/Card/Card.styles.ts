@@ -7,7 +7,7 @@ export const rootStyles: CSSProperties = {
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
-  minHeight: 315,
+  minHeight: 300,
   padding: '0 36px',
   position: 'relative',
   backgroundRepeat: 'no-repeat',
@@ -58,4 +58,7 @@ export const ratingContentStyles: CSSProperties = {
   background: '#fff',
   borderRadius: '8px 8px 0 0',
   padding: '16px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 };

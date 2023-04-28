@@ -7,7 +7,13 @@ import { CARDS } from './Cards.data';
 const displayCardsList = (cards: ICardProps[]) => {
   if (cards?.length === 0) return null;
   return cards.map((card, index) => {
-    const { title = '', subTitle = '', imgUrl = '', emission, rating } = card;
+    const {
+      title = '',
+      subTitle = '',
+      imgUrl = '',
+      emission,
+      defaultRating,
+    } = card;
     return (
       <Card
         key={index}
@@ -15,7 +21,7 @@ const displayCardsList = (cards: ICardProps[]) => {
         subTitle={subTitle}
         imgUrl={imgUrl}
         emission={emission}
-        rating={rating}
+        defaultRating={defaultRating}
       />
     );
   });

@@ -1,3 +1,11 @@
+# chooose task
+
+The task was to create a page with the following layout: 
+
+![alt text](https://github.com/rafalradomski/chooose/blob/main/example.png?raw=true)
+
+## Info
+
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
