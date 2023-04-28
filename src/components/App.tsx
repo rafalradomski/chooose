@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChakraProvider, theme } from '@chakra-ui/react';
+import { ChakraProvider, theme, Text } from '@chakra-ui/react';
 import { Cards } from './Cards/Cards';
 import { Container } from './Container/Container';
 
@@ -13,6 +13,7 @@ export const App = () => (
   <ChakraProvider theme={theme}>
     <div style={appStyles}>
       <Container>
+        <Text>Chooose Task</Text>
         <Cards />
       </Container>
     </div>
