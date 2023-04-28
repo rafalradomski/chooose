@@ -1,19 +1,48 @@
-import * as React from 'react';
+import React, { FC } from 'react';
+import { Card as ChakraCard, CardBody } from '@chakra-ui/react';
 import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
+  rootStyles,
+  contentStyles,
+  titleStyles,
+  subTitleStyles,
+  emissionsStyles,
+  ratingStyles,
+  ratingContentStyles,
+} from './Card.styles';
 
-export const Card = () => {
+export interface ICardProps {
+  title: string;
+  subTitle: string;
+  imgUrl: string;
+}
+
+export const Card: FC<ICardProps> = ({ title, subTitle, imgUrl }) => {
   return (
-    <Box textAlign="center" fontSize="xl">
-      TEST
-    </Box>
+    <ChakraCard borderRadius={16}>
+      <CardBody p={3}>
+        <div
+          style={{
+            ...rootStyles,
+            backgroundImage: `url(${imgUrl})`,
+          }}
+        >
+          <div style={contentStyles}>
+            <span style={titleStyles}>{title}</span>
+            <span style={subTitleStyles}>{subTitle}</span>
+            <div style={emissionsStyles}>
+              <span>Emissions offset:</span>
+              <span>
+                <strong>810kg CO2e</strong>
+              </span>
+            </div>
+          </div>
+          <div style={ratingStyles}>
+            <div style={ratingContentStyles}>
+              Trip Rating: <strong>4.7</strong>
+            </div>
+          </div>
+        </div>
+      </CardBody>
+    </ChakraCard>
   );
 };
