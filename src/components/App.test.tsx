@@ -1,7 +1,7 @@
 import React from "react"
 import { screen } from "@testing-library/react"
 import '@testing-library/jest-dom';
-import { render } from "./test-utils/test-utils"
+import { render } from "../test-utils/test-utils"
 import { App } from "./App"
 import {
   ChakraProvider,
